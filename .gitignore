@@ -1,0 +1,20 @@
+#ignore thumbnails created by windows
+Thumbs.db
+#ignore files build by Visual Studio
+*.obj
+*.exe
+*.json
+*.udf
+*.ccs
+*.dll
+
+
+#ignore Android SDK, NDK, Eclipse plugin and ANT files
+libs/
+bin/
+obj/
+assets/
+cocosstudio/
+proj.android/
+proj.ios_mac/
+Debug.win32/

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<player attack="99" hp="100" def="50" speed="666">
+		<weapon attack="50" />
+		<shoes speed="100" />
+	</player>
+</root>
