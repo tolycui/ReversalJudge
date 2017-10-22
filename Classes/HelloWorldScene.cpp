@@ -30,9 +30,14 @@ bool HelloWorld::init()
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("MainScene.csb");
 
-    addChild(rootNode);
+	auto spr = MenuItemImage::create("BottomItem1.jpg", "BottomItem2.jpg");
+	spr->setPosition(Vec2(100, 100));
+
+	Menu * mn = Menu::create(spr, nullptr);
+	addChild(mn);
+
+
 
     return true;
 }

@@ -35,15 +35,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		glview = GLViewImpl::createWithRect("ReversalJudge", Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
         director->setOpenGLView(glview);
     }
-	//Ê¹ÓÃ¸ß¶ÈÊÊÅä;
+
 	director->getOpenGLView()->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, 
 		ResolutionPolicy::FIXED_HEIGHT);
 
     // turn on display FPS
     director->setDisplayStats(true);
-	//¸ù¾ÝÆÁÄ»·Ö±æÂÊ×öËÑË÷Â·¾¶Çø·Ö;
+
 	Size frameSize = glview->getFrameSize();
-	//»ñÈ¡Ä¬ÈÏ×ÊÔ´Â·¾¶;
+
 	std::vector<std::string> searchPaths =FileUtils::getInstance()->getSearchPaths();
 	std::string searchPathBasic = searchPaths[0];
 
@@ -52,7 +52,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	{
 		director->setContentScaleFactor(MIN(largeResolutionSize.height / designResolutionSize.height,
 			largeResolutionSize.width / designResolutionSize.width));
-		//ÉèÖÃ±ÈÄ¬ÈÏ×ÊÔ´Â·¾¶¸ü¸ßµÄÓÅÏÈ¼¶
+
 		searchPaths.insert(searchPaths.begin(), searchPathBasic + "large");
 	}
 	else if (frameSize.height > smallResolutionSize.height)
@@ -67,7 +67,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 			smallResolutionSize.width/designResolutionSize.width));
 		searchPaths.insert(searchPaths.begin(), searchPathBasic+"small");
 	}
-	//ÉèÖÃËÑË÷Â·¾¶
+
 	std::vector<std::string> strvec = FileUtils::getInstance()->getSearchPaths();
 	FileUtils::getInstance()->setSearchPaths(searchPaths);
 	strvec = FileUtils::getInstance()->getSearchPaths();

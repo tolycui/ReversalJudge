@@ -52,15 +52,15 @@ bool TitleScene::init()
 	auto helpTitleKey = message->valueForKey("zhizuoren");    //根据key，获取value
 	const char* helpTitle = helpTitleKey->getCString();    //将value转化为字符串
 	//text
-	auto label1 = Label::createWithBMFont("title3.fnt", helpTitle);
+	auto label1 = Label::createWithBMFont("fnt/Myfnt.fnt", helpTitle);
 
 	auto helpTitleKey2 = message->valueForKey("cehua");    //根据key，获取value
 	const char* helpTitle2 = helpTitleKey2->getCString();    //将value转化为字符串
-	auto label2 = Label::createWithBMFont("title3.fnt", helpTitle2);
+	auto label2 = Label::createWithBMFont("fnt/Myfnt.fnt", helpTitle2);
 
 	auto helpTitleKey3 = message->valueForKey("chengxu");    //根据key，获取value
 	const char* helpTitle3 = helpTitleKey3->getCString();    //将value转化为字符串
-	auto label3 = Label::createWithBMFont("title3.fnt", helpTitle3);
+	auto label3 = Label::createWithBMFont("fnt/Myfnt.fnt", helpTitle3);
 
 	label1->setColor(Color3B::YELLOW);  //BMFont字体这样设置颜色;
 	label2->setColor(Color3B::YELLOW);

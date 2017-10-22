@@ -1,13 +1,17 @@
 #include "SceneMain.h"
 
 
+
 SceneMain::SceneMain()
 {
+
 }
+
 
 
 SceneMain::~SceneMain()
 {
+	removeAllChildren();
 }
 
 
@@ -21,7 +25,7 @@ Scene* SceneMain::createScene()
 
 void SceneMain::onEnter()
 {
-
+	Layer::onEnter();
 }
 
 bool SceneMain::init()
@@ -30,42 +34,62 @@ bool SceneMain::init()
 	{
 		return false;
 	}
-	auto spr = Sprite::create("BottomItem3.jpg");
-	spr->setPosition(Vec2(10, 100));
-	spr->setAnchorPoint(Vec2(0, 0));
-	addChild(spr);
 
-	//Vector<MenuItem*> borromMenuVec;
-	//for (int i = 1; i <= 4; i++)
+	bottomBar = BottomBar::create();
+	addChild(bottomBar);
+
+	std::string fileName = "BottomBarFrame";
+	fileName.append(PIC);
+	auto bottomBarFrame = Sprite::create(fileName);
+	bottomBarFrame->setAnchorPoint(Vec2(0,0));
+	bottomBarFrame->setPosition(Vec2(0, 0));
+	bottomBarFrame->setZOrder(-1);
+	addChild(bottomBarFrame);
+
+	/*topBar = TopBar::create();
+	topBar->setAnchorPoint(Vec2(0, 1));
+	topBar->setPosition(Vec2(0, FRAMESIZE.height));
+	addChild(topBar);*/
+
+	//log("%d,%d", bottomBar->getTag(), topBar->getTag());
+	//set clicked call back;
+	//for (int i = 0; i < 4;i++)
 	//{
-	//	String* filename = String::createWithFormat("BottomItem3.jpg", i);
-	//	MenuItemImage *  aMenuItem = MenuItemImage::create(filename->getCString(), filename->getCString());
-	//	/*	aMenuItem->setTag(GRAY);
-	//	aMenuItem->setName(stringVec[i - 1]);*/
-	//	aMenuItem->setAnchorPoint(Vec2(0, 0));
-	//	aMenuItem->setPosition(Vec2(50, 100 * i));
-	//	borromMenuVec.pushBack(aMenuItem);
+	//	;
 	//}
-	//Menu *mn = Menu::createWithArray(borromMenuVec);
-	//mn->alignItemsVertically();
-	//mn->setAnchorPoint(Vec2(0, 0));
-	//mn->setPosition(Vec2(0, 0));
-	////mn->setContentSize(Size(FRAMESIZE.width / 2, FRAMESIZE.height / 2));
-	//addChild(mn);
-
-	//log("x=%g,y=%g", this->getContentSize().width, this->getContentSize().height);
-
-
-
-
-	//bottomBar = BottomBar::create();
-	//bottomBar->setPosition(Vec2(0, 0));
-	//this->addChild(bottomBar);
 	
-	/*Sprite *bg = Sprite::create("MainSceneBg.jpg");
-	bg->setZOrder(-99);
-	addChild(bg);
-	bg->setPosition(Vec2(FRAMESIZE.width / 2, FRAMESIZE.height / 2));*/
 
 	return true;
 }
+
+void SceneMain::Myclicked(Ref * pSender)
+{
+	log("A");
+	MenuItem* item = (MenuItem*)pSender;
+	
+	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
+	std::string str = message->valueForKey(barName[0])->getCString();
+	//topBar->changeText(str);
+}
+
+//void SceneMain::MyclickedB(Ref * pSender)
+//{
+//	log("b");
+//	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
+//	std::string str = message->valueForKey(barName[1])->getCString();
+//	topBar->changeText(str);
+//}
+//void SceneMain::MyclickedC(Ref * pSender)
+//{
+//	log("c");
+//	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
+//	std::string str = message->valueForKey(barName[2])->getCString();
+//	topBar->changeText(str);
+//}
+//void SceneMain::MyclickedD(Ref * pSender)
+//{
+//	log("d");
+//	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
+//	std::string str = message->valueForKey(barName[3])->getCString();
+//	topBar->changeText(str);
+//}

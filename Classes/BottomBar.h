@@ -1,31 +1,40 @@
 #pragma once
-#include "D:\Cocos\Cocos2d-x\cocos2d-x-3.10\cocos\2d\CCNode.h"
 #include "SystemHead.h"
 #include "ui/CocosGUI.h"
 
 using namespace ui;
+static std::string barName[4] = { "xinxi", "tuili", "konggao", "sheding" };
+
 enum EnumBarHL
 {
 	GRAY=0,
 	HL=1,
 };
 
-static std::string stringVec[] = { "A","B","C","D" };
-class BottomBar :
-	public Menu
+static std::string BarItemNameVec[] = { "A","B","C","D" };
+
+class BottomBar :public Menu
 {
 public:
 	BottomBar();
 	~BottomBar();
-	static BottomBar* create();
+	CREATE_FUNC(BottomBar);
 	bool init();
 
 	//Vector<MenuItemImage*> borromMenuVec;
 	//Highlight when you click on another item
-	void setAnotherHL();
+	void clickedSetHL(MenuItem* item);
+	//4 page's callback ptr; 
+
+	void Myclicked(Ref * pSender);
+	//void MyclickedB(Ref * pSender);
+	//void MyclickedC(Ref * pSender);
+	//void MyclickedD(Ref * pSender);
+
 protected:
-	void setNowHL(std::string itemName); 
-	void setPreviouGray();
+	
+	void setNowHL(MenuItem* item); 
+	void setPreviouGray(MenuItem* item);
 
 };
 
