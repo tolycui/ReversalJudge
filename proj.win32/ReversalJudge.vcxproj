@@ -151,9 +151,15 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\csvLoadUtils\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\FactoryScene.cpp" />
     <ClCompile Include="..\Classes\GameProgress.cpp" />
+    <ClCompile Include="..\Classes\LayerBg.cpp" />
     <ClCompile Include="..\Classes\LayerMainMenu.cpp" />
+    <ClCompile Include="..\Classes\LayerMainPageA.cpp" />
+    <ClCompile Include="..\Classes\LayerMainPageB.cpp" />
+    <ClCompile Include="..\Classes\LayerMainPageC.cpp" />
+    <ClCompile Include="..\Classes\LayerMainPageD.cpp" />
     <ClCompile Include="..\Classes\LayerTopbarBasics.cpp" />
     <ClCompile Include="..\Classes\MyMenuItemImage.cpp" />
+    <ClCompile Include="..\Classes\PersonHead.cpp" />
     <ClCompile Include="..\Classes\SceneManage.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\MyUtils.cpp" />
@@ -167,6 +173,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\ScreenBlink.cpp" />
     <ClCompile Include="..\Classes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\TopBar.cpp" />
+    <ClCompile Include="..\Classes\TouchTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,9 +184,15 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\csvLoadUtils\StringUtil.h" />
     <ClInclude Include="..\Classes\FactoryScene.h" />
     <ClInclude Include="..\Classes\GameProgress.h" />
+    <ClInclude Include="..\Classes\LayerBg.h" />
     <ClInclude Include="..\Classes\LayerMainMenu.h" />
+    <ClInclude Include="..\Classes\LayerMainPageA.h" />
+    <ClInclude Include="..\Classes\LayerMainPageB.h" />
+    <ClInclude Include="..\Classes\LayerMainPageC.h" />
+    <ClInclude Include="..\Classes\LayerMainPageD.h" />
     <ClInclude Include="..\Classes\LayerTopbarBasics.h" />
     <ClInclude Include="..\Classes\MyMenuItemImage.h" />
+    <ClInclude Include="..\Classes\PersonHead.h" />
     <ClInclude Include="..\Classes\SceneManage.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\MyUtils.h" />
@@ -197,6 +210,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\SystemHeader.h" />
     <ClInclude Include="..\Classes\TitleScene.h" />
     <ClInclude Include="..\Classes\TopBar.h" />
+    <ClInclude Include="..\Classes\TouchTest.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

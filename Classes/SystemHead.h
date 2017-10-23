@@ -17,6 +17,13 @@ static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 
 #define CHINESE_FNT "fnt/Myfnt.fnt"
 #define CHINESE_XML "chinesexml/BottomBarItem.xml"
+#define PERSONHEADHEIGHT_OWN (FRAMESIZE.height/15)
+#define PERSONHEADHEIGHT_OTHER (FRAMESIZE.height/25)
+
+#define LAYER_PAGEA_BGPIC "SceneBgPic/Scengbg1.jpg"
+#define LAYER_PAGEB_BGPIC "SceneBgPic/Scengbg2.jpg"
+#define LAYER_PAGEC_BGPIC "SceneBgPic/Scengbg3.jpg"
+#define LAYER_PAGED_BGPIC "SceneBgPic/Scengbg4.jpg"
 
 enum EnumMyZorder
 {
@@ -44,6 +51,7 @@ enum EnumSceneType
 #define bg_music_2 "sount/game_bg.aifc"
 #define sound_1   "sound/Blip.caf"
 #define sound_2   "sound/Explosion.caf"
+
 
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
 

@@ -3,7 +3,7 @@
 #include "ScreenBlink.h"
 #include "SceneManage.h"
 #include "SceneMain.h"
-
+#include "TouchTest.h"
 USING_NS_CC;
 
 
@@ -74,7 +74,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
 
-	Scene *sc = SceneMain::createScene();
+	Scene *sc = TouchTest::createScene();
 	director->replaceScene(sc);
 	//SceneManage::getInstance()->initBlinkScene();
 

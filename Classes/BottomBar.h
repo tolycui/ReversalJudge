@@ -11,7 +11,8 @@ enum EnumBarHL
 	HL=1,
 };
 
-static std::string BarItemNameVec[] = { "A","B","C","D" };
+static std::string BarItemNameVec[] = { "G","H"}; //G:gray  H:HL
+static int BarItemTag[] = { 0, 1, 2, 3 };
 
 class BottomBar :public Menu
 {
@@ -25,11 +26,7 @@ public:
 	//Highlight when you click on another item
 	void clickedSetHL(MenuItem* item);
 	//4 page's callback ptr; 
-
 	void Myclicked(Ref * pSender);
-	//void MyclickedB(Ref * pSender);
-	//void MyclickedC(Ref * pSender);
-	//void MyclickedD(Ref * pSender);
 
 protected:
 	

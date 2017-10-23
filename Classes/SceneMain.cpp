@@ -37,44 +37,48 @@ bool SceneMain::init()
 	layerMainMenu = LayerMainMenu::create();
 	addChild(layerMainMenu);
 
-	//set clicked call back;
-	//for (int i = 0; i < 4;i++)
-	//{
-	//	;
-	//}
-	
+	MenuItem * item;
+	for (int i = 0; i < 4;i++)
+	{
+		item = dynamic_cast<MenuItem *>(this->layerMainMenu->getBottomBar()->getChildByTag(i));
+		item->setCallback(CC_CALLBACK_1(SceneMain::Myclicked,this));
+	}
+	auto per1 = PersonHead::create("PersonagePic/name1.jpg", PERSONHEADHEIGHT_OWN);
+	addChild(per1);
+	per1->setPosition(Vec2(200, 200));
 
+	layerBg = LayerBg::create(LAYER_PAGEA_BGPIC);
+	addChild(layerBg);
 	return true;
 }
 
 void SceneMain::Myclicked(Ref * pSender)
 {
 	log("A");
-	MenuItem* item = (MenuItem*)pSender;
-	
-	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
-	std::string str = message->valueForKey(barName[0])->getCString();
-	//topBar->changeText(str);
+	//Menu text changed and color changed
+	this->layerMainMenu->Myclicked(pSender);
+
 }
 
-//void SceneMain::MyclickedB(Ref * pSender)
-//{
-//	log("b");
-//	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
-//	std::string str = message->valueForKey(barName[1])->getCString();
-//	topBar->changeText(str);
-//}
-//void SceneMain::MyclickedC(Ref * pSender)
-//{
-//	log("c");
-//	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
-//	std::string str = message->valueForKey(barName[2])->getCString();
-//	topBar->changeText(str);
-//}
-//void SceneMain::MyclickedD(Ref * pSender)
-//{
-//	log("d");
-//	__Dictionary* message = __Dictionary::createWithContentsOfFile(CHINESE_XML);    //read xml
-//	std::string str = message->valueForKey(barName[3])->getCString();
-//	topBar->changeText(str);
-//}
+void SceneMain::showLayerPageA()
+{
+
+}
+void SceneMain::showLayerPageB()
+{
+
+}
+void SceneMain::showLayerPageC()
+{
+
+}
+void SceneMain::showLayerPageD()
+{
+
+}
+
+void SceneMain::clickedBar()
+{
+
+}
+
