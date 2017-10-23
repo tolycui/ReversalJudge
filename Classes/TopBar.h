@@ -9,7 +9,8 @@ public:
 	~TopBar();
 	CREATE_FUNC(TopBar);
 	bool init();
+	void changeText(std::string text);
+protected:
 	Label * label;
 	Sprite * TopBarFrame;
-	//void changeText(std::string text);
 };

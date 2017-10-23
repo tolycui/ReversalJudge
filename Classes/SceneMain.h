@@ -1,7 +1,6 @@
 #pragma once
 #include "SystemHead.h"
-#include "BottomBar.h"
-#include "TopBar.h"
+#include "LayerMainMenu.h"
 
 class BottomBar;
 
@@ -19,7 +18,7 @@ public:
 	//void MyclickedC(Ref * pSender);
 	//void MyclickedD(Ref * pSender);
 protected:
-	BottomBar * bottomBar;
-	TopBar * topBar;
+	LayerMainMenu * layerMainMenu;
+
 };
 

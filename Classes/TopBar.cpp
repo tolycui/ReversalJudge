@@ -2,7 +2,7 @@
 
 TopBar::~TopBar()
 {
-	/*removeAllChildren();*/
+	removeAllChildren();
 }
 
 bool TopBar::init()
@@ -11,7 +11,7 @@ bool TopBar::init()
 	{
 		return false;
 	}
-	/*std::string fileName = "BottomBarFrame";
+	std::string fileName = "BottomBarFrame";
 	fileName.append(PIC);
 	TopBarFrame = Sprite::create(fileName);
 	TopBarFrame->setAnchorPoint(Vec2(0, 0));
@@ -26,12 +26,15 @@ bool TopBar::init()
 	label = Label::createWithBMFont(CHINESE_FNT, str, TextHAlignment::CENTER);
 	label->setBMFontSize(36);
 	label->setPosition(Vec2(FRAMESIZE.width / 2, this->getContentSize().height / 2));
-	this->addChild(label);*/
+	this->addChild(label);
+
+	this->setAnchorPoint(Vec2(0, 1));
+	this->setPosition(Vec2(0, FRAMESIZE.height));
 	return true;
 }
 
 
-//void TopBar::changeText(std::string text)
-//{
-//	this->label->setString(text);
-//}
+void TopBar::changeText(std::string text)
+{
+	this->label->setString(text);
+}

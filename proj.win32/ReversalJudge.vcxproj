@@ -151,6 +151,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\csvLoadUtils\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\FactoryScene.cpp" />
     <ClCompile Include="..\Classes\GameProgress.cpp" />
+    <ClCompile Include="..\Classes\LayerMainMenu.cpp" />
+    <ClCompile Include="..\Classes\LayerTopbarBasics.cpp" />
     <ClCompile Include="..\Classes\MyMenuItemImage.cpp" />
     <ClCompile Include="..\Classes\SceneManage.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
@@ -175,6 +177,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\csvLoadUtils\StringUtil.h" />
     <ClInclude Include="..\Classes\FactoryScene.h" />
     <ClInclude Include="..\Classes\GameProgress.h" />
+    <ClInclude Include="..\Classes\LayerMainMenu.h" />
+    <ClInclude Include="..\Classes\LayerTopbarBasics.h" />
     <ClInclude Include="..\Classes\MyMenuItemImage.h" />
     <ClInclude Include="..\Classes\SceneManage.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />

@@ -34,24 +34,9 @@ bool SceneMain::init()
 	{
 		return false;
 	}
+	layerMainMenu = LayerMainMenu::create();
+	addChild(layerMainMenu);
 
-	bottomBar = BottomBar::create();
-	addChild(bottomBar);
-
-	std::string fileName = "BottomBarFrame";
-	fileName.append(PIC);
-	auto bottomBarFrame = Sprite::create(fileName);
-	bottomBarFrame->setAnchorPoint(Vec2(0,0));
-	bottomBarFrame->setPosition(Vec2(0, 0));
-	bottomBarFrame->setZOrder(-1);
-	addChild(bottomBarFrame);
-
-	/*topBar = TopBar::create();
-	topBar->setAnchorPoint(Vec2(0, 1));
-	topBar->setPosition(Vec2(0, FRAMESIZE.height));
-	addChild(topBar);*/
-
-	//log("%d,%d", bottomBar->getTag(), topBar->getTag());
 	//set clicked call back;
 	//for (int i = 0; i < 4;i++)
 	//{

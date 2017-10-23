@@ -18,6 +18,13 @@ static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 #define CHINESE_FNT "fnt/Myfnt.fnt"
 #define CHINESE_XML "chinesexml/BottomBarItem.xml"
 
+enum EnumMyZorder
+{
+	BG=-1,
+	SPRITE=1,
+	MENU=2
+};
+
 enum EnumSceneType
 {
 	ScreenBlink = 1,

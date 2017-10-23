@@ -75,6 +75,12 @@
     <ClCompile Include="..\Classes\TopBar.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LayerTopbarBasics.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LayerMainMenu.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -153,6 +159,12 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TopBar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LayerTopbarBasics.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LayerMainMenu.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
