@@ -21,7 +21,7 @@ PersonHead* PersonHead::create(std::string picPath, int diameter)
 
 bool PersonHead::init(std::string picPath, int diameter)
 {
-	if (!Sprite::initWithFile("BottomItem3.jpg"))
+	if (!Sprite::init())
 	{
 		return false;
 	}
@@ -45,12 +45,12 @@ void PersonHead::setImg(std::string picPath, int diameter)
 
 	float maskscale = diameter / mask->getContentSize().height;
 	mask->setScale(diameter / mask->getContentSize().height);
-	mask->setContentSize(mask->getContentSize()*maskscale);
+	//mask->setContentSize(mask->getContentSize()/maskscale);
 
 	//仿射坐标映射
 	AffineTransform transform = AffineTransform::IDENTITY;
 	transform = AffineTransformScale(transform, mask->getScale(), mask->getScale());
-	clipNode->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
+	//clipNode->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
 
 
 
@@ -61,8 +61,8 @@ void PersonHead::setImg(std::string picPath, int diameter)
 	//log("mask %g,%g", mask->getPosition().x, mask->getPosition().y);
 	//log("mask anch %g,%g", mask->getAnchorPoint().x, mask->getAnchorPoint().y);
 	log("mask contentSize %g,%g", mask->getContentSize().width, mask->getContentSize().height);
-	this->addChild(mask);
-	mask->setPosition(Vec2(0, 0));
+	//this->addChild(mask);
+	//mask->setPosition(Vec2(0, 0));
 	//img scale
 	auto img = Sprite::create(picPath);
 	//将头像大小缩放为模板大小  
@@ -74,12 +74,12 @@ void PersonHead::setImg(std::string picPath, int diameter)
 	img->setScale(diameter / img->getContentSize().height);
 
 
-	img->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
+	//img->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
 
 
 
-	mask->setPosition(clipNode->getContentSize().width / 2, clipNode->getContentSize().height / 2);
-	img->setPosition(clipNode->getContentSize().width / 2, clipNode->getContentSize().height / 2);
+	//mask->setPosition(clipNode->getContentSize().width / 2, clipNode->getContentSize().height / 2);
+	//img->setPosition(clipNode->getContentSize().width / 2, clipNode->getContentSize().height / 2);
 	clipNode->addChild(img);
 
 	//log("%g,%g", clipNode->getContentSize().width, clipNode->getContentSize().height);
@@ -87,7 +87,7 @@ void PersonHead::setImg(std::string picPath, int diameter)
 	auto circle = Sprite::create("headFrame.png");
 	circle->setScale(diameter / circle->getContentSize().height);
 	//circle->setContentSize(circle->getContentSize()*((float)diameter / circle->getContentSize().height));
-	circle->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
+	//circle->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
 	
 	//this->setContentSize(SizeApplyAffineTransform(mask->getContentSize(), transform));
 

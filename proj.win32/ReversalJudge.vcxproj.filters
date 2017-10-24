@@ -102,6 +102,12 @@
     <ClCompile Include="..\Classes\TouchTest.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PageAPersonModule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SystemHead.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -207,6 +213,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TouchTest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PageAPersonModule.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

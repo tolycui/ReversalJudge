@@ -8,18 +8,36 @@ static cocos2d::Size smallResolutionSize = cocos2d::Size(640, 1136);
 static cocos2d::Size mediumResolutionSize = cocos2d::Size(750, 1334);
 static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 
+//游戏进程csv
 #define PATH_CSV_OF_GAMEPROGRESS ("csv/GameProgress.csv")
+
 #define  FRAMESIZE   (((Director::getInstance())->getOpenGLView())->getFrameSize())
 #define  winSize  (Director::getInstance()->getWinSize())
 
-#define BOTTOMBARTEXT (FRAMESIZE.height / 48)  //bar text height
+//主界面底部按钮的大小
 #define WID  (FRAMESIZE.width / 12)
+//主界面底部文字高度
+#define BOTTOMBARTEXT (FRAMESIZE.height / 48)  //bar text height
+//主界面底部条的高度
+#define  BARHIGHT (FRAMESIZE.height/12)
+//主界面人物模块底部位置
+#define PERSON_MODULE_BOTTOM (FRAMESIZE.height / 3)
 
 #define CHINESE_FNT "fnt/Myfnt.fnt"
 #define CHINESE_XML "chinesexml/BottomBarItem.xml"
-#define PERSONHEADHEIGHT_OWN (FRAMESIZE.height/15)
-#define PERSONHEADHEIGHT_OTHER (FRAMESIZE.height/25)
 
+//人物聊天头像大小
+#define PERSONHEADHEIGHT_OWN (FRAMESIZE.width/5)
+#define PERSONHEADHEIGHT_OTHER (FRAMESIZE.width/10)
+
+//人物聊天头像文件路径
+#define PERSONHEAD_PICPATH "PersonagePic/"
+
+//人物名字
+extern std::string PersonName_other[];
+extern std::string PersonName_own[];
+
+//页面背景图
 #define LAYER_PAGEA_BGPIC "SceneBgPic/Scengbg1.jpg"
 #define LAYER_PAGEB_BGPIC "SceneBgPic/Scengbg2.jpg"
 #define LAYER_PAGEC_BGPIC "SceneBgPic/Scengbg3.jpg"

@@ -3,6 +3,10 @@
 #include "LayerMainMenu.h"
 #include "PersonHead.h"
 #include "LayerBg.h"
+#include "LayerMainPageA.h"
+#include "LayerMainPageB.h"
+#include "LayerMainPageC.h"
+#include "LayerMainPageD.h"
 
 class BottomBar;
 
@@ -20,6 +24,7 @@ public:
 protected:
 	LayerMainMenu * layerMainMenu;
 	LayerBg * layerBg;
+	LayerMainPageA * pageA;
 
 	void clickedBar();
 	void showLayerPageA();

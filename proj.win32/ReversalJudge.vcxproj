@@ -159,6 +159,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\LayerMainPageD.cpp" />
     <ClCompile Include="..\Classes\LayerTopbarBasics.cpp" />
     <ClCompile Include="..\Classes\MyMenuItemImage.cpp" />
+    <ClCompile Include="..\Classes\PageAPersonModule.cpp" />
     <ClCompile Include="..\Classes\PersonHead.cpp" />
     <ClCompile Include="..\Classes\SceneManage.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
@@ -171,6 +172,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\SceneRoom.cpp" />
     <ClCompile Include="..\Classes\SceneStory.cpp" />
     <ClCompile Include="..\Classes\ScreenBlink.cpp" />
+    <ClCompile Include="..\Classes\SystemHead.cpp" />
     <ClCompile Include="..\Classes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\TopBar.cpp" />
     <ClCompile Include="..\Classes\TouchTest.cpp" />
@@ -192,6 +194,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\LayerMainPageD.h" />
     <ClInclude Include="..\Classes\LayerTopbarBasics.h" />
     <ClInclude Include="..\Classes\MyMenuItemImage.h" />
+    <ClInclude Include="..\Classes\PageAPersonModule.h" />
     <ClInclude Include="..\Classes\PersonHead.h" />
     <ClInclude Include="..\Classes\SceneManage.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />

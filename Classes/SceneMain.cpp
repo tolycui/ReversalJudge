@@ -43,12 +43,15 @@ bool SceneMain::init()
 		item = dynamic_cast<MenuItem *>(this->layerMainMenu->getBottomBar()->getChildByTag(i));
 		item->setCallback(CC_CALLBACK_1(SceneMain::Myclicked,this));
 	}
-	auto per1 = PersonHead::create("PersonagePic/name1.jpg", PERSONHEADHEIGHT_OWN);
-	addChild(per1);
-	per1->setPosition(Vec2(200, 200));
+
+	pageA = LayerMainPageA::create();
+	addChild(pageA);
+	
 
 	layerBg = LayerBg::create(LAYER_PAGEA_BGPIC);
 	addChild(layerBg);
+
+
 	return true;
 }
 

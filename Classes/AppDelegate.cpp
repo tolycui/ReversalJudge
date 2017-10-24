@@ -4,6 +4,7 @@
 #include "SceneManage.h"
 #include "SceneMain.h"
 #include "TouchTest.h"
+#include "TitleScene.h"
 USING_NS_CC;
 
 
@@ -75,6 +76,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0f / 60);
 
 	Scene *sc = SceneMain::createScene();
+	
+	//Scene *sc = TitleScene::createScene();
+
 	director->replaceScene(sc);
 	//SceneManage::getInstance()->initBlinkScene();
 

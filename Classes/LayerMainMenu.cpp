@@ -26,6 +26,7 @@ bool LayerMainMenu::init()
 	bottomBarFrame->setAnchorPoint(Vec2(0, 0));
 	bottomBarFrame->setPosition(Vec2(0, 0));
 	bottomBarFrame->setZOrder(-1);
+	bottomBarFrame->setScaleY(BARHIGHT / bottomBarFrame->getContentSize().height);
 	addChild(bottomBarFrame);
 
 	this->setPosition(Vec2(0, 0));
