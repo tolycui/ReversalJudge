@@ -74,7 +74,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
 
-	Scene *sc = TouchTest::createScene();
+	Scene *sc = SceneMain::createScene();
 	director->replaceScene(sc);
 	//SceneManage::getInstance()->initBlinkScene();
 
