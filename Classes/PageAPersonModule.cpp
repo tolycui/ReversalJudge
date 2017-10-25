@@ -19,7 +19,7 @@ bool PageAPersonModule::init()
 	}
 
 	this->setAnchorPoint(Vec2(0, 1));
-	this->setTextureRect(Rect(0, FRAMESIZE.height / 3, FRAMESIZE.width, FRAMESIZE.height / 3 - BARHIGHT));
+	this->setTextureRect(Rect(0, FRAMESIZE.height / 3, FRAMESIZE.width, PERSON_MODULE_BOTTOM - BARHIGHT));
 	this->setPosition(Vec2(0, FRAMESIZE.height - BARHIGHT));
 	this->setOpacity(0);
 
@@ -32,20 +32,19 @@ bool PageAPersonModule::init()
 	personHead->setPosition(Vec2(FRAMESIZE.width/6, this->getContentSize().height*2/3));
 	
 	__Dictionary * message = __Dictionary::createWithContentsOfFile("chinesexml/personName.xml");
-	auto mess = message->valueForKey(PersonName_own[0]); //0是哥哥1是弟弟
-	const char* str1 = mess->getCString();
-	name = Label::createWithTTF("str1", "fnt/JDJHCU.TTF", 50);
+	auto strName = message->valueForKey(PersonName_own[0])->getCString();//0是哥哥1是弟弟
+	name = Label::createWithTTF(strName, "fnt/JDJHCU.TTF", 50);
 	addChild(name);
 
-	__Dictionary * message2 = __Dictionary::createWithContentsOfFile("chinesexml/personmotto.xml");
-	auto str = message2->valueForKey(PersonName_own[0])->getCString();//0是哥哥1是弟弟
-	text = Label::createWithTTF(str, "fnt/JDJHCU.TTF", 32);
+	message = __Dictionary::createWithContentsOfFile("chinesexml/personmotto.xml");
+	auto strMotto = message->valueForKey(PersonName_own[0])->getCString();//0是哥哥1是弟弟
+	text = Label::createWithTTF(strMotto, "fnt/JDJHCU.TTF", 32);
 	addChild(text);
 
 	name->setAnchorPoint(Vec2(0, 0.5));
 	text->setAnchorPoint(Vec2(0, 0.5));
-	name->setPosition(Vec2(FRAMESIZE.width / 3, this->getContentSize().height * 2 / 3));
-	text->setPosition(Vec2(FRAMESIZE.width / 3, this->getContentSize().height * 2 / 3 - name->getContentSize().height));
+	name->setPosition(Vec2(FRAMESIZE.width / 3, this->getContentSize().height * 3 / 4));
+	text->setPosition(Vec2(FRAMESIZE.width / 3, this->getContentSize().height * 3 / 4 - name->getContentSize().height));
 	return true;
 }
 

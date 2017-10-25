@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(COCOS_X_ROOT)\cocos2d-x-3.10\cocos\audio\include;$(COCOS_X_ROOT)\cocos2d-x-3.10\external;$(COCOS_X_ROOT)\cocos2d-x-3.10\external\chipmunk\include\chipmunk;$(COCOS_X_ROOT)\cocos2d-x-3.10\extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);$(EngineRoot)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -151,6 +151,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\csvLoadUtils\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\FactoryScene.cpp" />
     <ClCompile Include="..\Classes\GameProgress.cpp" />
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LayerBg.cpp" />
     <ClCompile Include="..\Classes\LayerMainMenu.cpp" />
     <ClCompile Include="..\Classes\LayerMainPageA.cpp" />
@@ -158,17 +159,21 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\LayerMainPageC.cpp" />
     <ClCompile Include="..\Classes\LayerMainPageD.cpp" />
     <ClCompile Include="..\Classes\LayerTopbarBasics.cpp" />
+    <ClCompile Include="..\Classes\MyLayout_N.cpp" />
+    <ClCompile Include="..\Classes\MyLayout_N_M.cpp" />
+    <ClCompile Include="..\Classes\MyLayout_N_M_P_noT.cpp" />
     <ClCompile Include="..\Classes\MyMenuItemImage.cpp" />
-    <ClCompile Include="..\Classes\PageAPersonModule.cpp" />
-    <ClCompile Include="..\Classes\PersonHead.cpp" />
-    <ClCompile Include="..\Classes\SceneManage.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\MyUtils.cpp" />
+    <ClCompile Include="..\Classes\PageADialogMudule.cpp" />
+    <ClCompile Include="..\Classes\PageAPersonModule.cpp" />
+    <ClCompile Include="..\Classes\PageListViewV.cpp" />
     <ClCompile Include="..\Classes\personageItem.cpp" />
+    <ClCompile Include="..\Classes\PersonHead.cpp" />
     <ClCompile Include="..\Classes\SceneaAticle.cpp" />
     <ClCompile Include="..\Classes\SceneCourt.cpp" />
     <ClCompile Include="..\Classes\SceneDialogue.cpp" />
     <ClCompile Include="..\Classes\SceneMain.cpp" />
+    <ClCompile Include="..\Classes\SceneManage.cpp" />
     <ClCompile Include="..\Classes\SceneRoom.cpp" />
     <ClCompile Include="..\Classes\SceneStory.cpp" />
     <ClCompile Include="..\Classes\ScreenBlink.cpp" />
@@ -177,6 +182,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TopBar.cpp" />
     <ClCompile Include="..\Classes\TouchTest.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyLayout_N_M_P_OTHER.cpp" />
+    <ClCompile Include="MyLayout_N_M_P_OWN.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -186,6 +193,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\csvLoadUtils\StringUtil.h" />
     <ClInclude Include="..\Classes\FactoryScene.h" />
     <ClInclude Include="..\Classes\GameProgress.h" />
+    <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LayerBg.h" />
     <ClInclude Include="..\Classes\LayerMainMenu.h" />
     <ClInclude Include="..\Classes\LayerMainPageA.h" />
@@ -193,19 +201,23 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\LayerMainPageC.h" />
     <ClInclude Include="..\Classes\LayerMainPageD.h" />
     <ClInclude Include="..\Classes\LayerTopbarBasics.h" />
+    <ClInclude Include="..\Classes\MyLayout_N.h" />
+    <ClInclude Include="..\Classes\MyLayout_N_M.h" />
+    <ClInclude Include="..\Classes\MyLayout_N_M_P_noT.h" />
     <ClInclude Include="..\Classes\MyMenuItemImage.h" />
-    <ClInclude Include="..\Classes\PageAPersonModule.h" />
-    <ClInclude Include="..\Classes\PersonHead.h" />
-    <ClInclude Include="..\Classes\SceneManage.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\MyUtils.h" />
+    <ClInclude Include="..\Classes\PageADialogMudule.h" />
+    <ClInclude Include="..\Classes\PageAPersonModule.h" />
+    <ClInclude Include="..\Classes\PageListViewV.h" />
     <ClInclude Include="..\Classes\personageItem.h" />
+    <ClInclude Include="..\Classes\PersonHead.h" />
     <ClInclude Include="..\Classes\PublicDefine.h" />
     <ClInclude Include="..\Classes\PublicSourceDefine.h" />
     <ClInclude Include="..\Classes\SceneaAticle.h" />
     <ClInclude Include="..\Classes\SceneCourt.h" />
     <ClInclude Include="..\Classes\SceneDialogue.h" />
     <ClInclude Include="..\Classes\SceneMain.h" />
+    <ClInclude Include="..\Classes\SceneManage.h" />
     <ClInclude Include="..\Classes\SceneRoom.h" />
     <ClInclude Include="..\Classes\SceneStory.h" />
     <ClInclude Include="..\Classes\ScreenBlink.h" />
@@ -215,6 +227,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TopBar.h" />
     <ClInclude Include="..\Classes\TouchTest.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="MyLayout_N_M_P_OTHER.h" />
+    <ClInclude Include="MyLayout_N_M_P_OWN.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

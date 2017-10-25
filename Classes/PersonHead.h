@@ -7,7 +7,7 @@ public:
 	/*
 	diameter: cicre's diameter
 	*/
-	static PersonHead* create(std::string picPath, int  diameter);
+	static PersonHead* create(std::string picPath, int  diameter = PERSONHEADHEIGHT_OTHER);
 	bool init(std::string picPath, int  diameter);
 	void setImg(std::string picPath, int diameter);
 };

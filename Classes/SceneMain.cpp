@@ -1,6 +1,6 @@
 #include "SceneMain.h"
-
-
+#include "PageADialogMudule.h"
+#include "ui/CocosGUI.h"
 
 SceneMain::SceneMain()
 {
@@ -46,11 +46,12 @@ bool SceneMain::init()
 
 	pageA = LayerMainPageA::create();
 	addChild(pageA);
-	
 
 	layerBg = LayerBg::create(LAYER_PAGEA_BGPIC);
 	addChild(layerBg);
 
+	PageADialogMudule* dalog = PageADialogMudule::create();
+	addChild(dalog);
 
 	return true;
 }

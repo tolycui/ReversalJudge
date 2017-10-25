@@ -14,14 +14,22 @@ static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 #define  FRAMESIZE   (((Director::getInstance())->getOpenGLView())->getFrameSize())
 #define  winSize  (Director::getInstance()->getWinSize())
 
+//字体
+#define FNT1 "fnt/JDJHCU.TTF"
+
+
 //主界面底部按钮的大小
 #define WID  (FRAMESIZE.width / 12)
 //主界面底部文字高度
 #define BOTTOMBARTEXT (FRAMESIZE.height / 48)  //bar text height
 //主界面底部条的高度
 #define  BARHIGHT (FRAMESIZE.height/12)
-//主界面人物模块底部位置
-#define PERSON_MODULE_BOTTOM (FRAMESIZE.height / 3)
+//主界面主人公模块底部到屏幕顶部距离
+#define PERSON_MODULE_BOTTOM (FRAMESIZE.height / 4)
+//聊天列表的宽度和高度;
+#define LISTWID FRAMESIZE.width * 23 / 24
+#define LISTHEIGHT (FRAMESIZE.height - PERSON_MODULE_BOTTOM - BARHIGHT)
+
 
 #define CHINESE_FNT "fnt/Myfnt.fnt"
 #define CHINESE_XML "chinesexml/BottomBarItem.xml"

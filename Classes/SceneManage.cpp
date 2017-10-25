@@ -70,7 +70,6 @@ void SceneManage::registerChangeSceneEvent()
 {
 	auto _eventDispatche = Director::getInstance()->getEventDispatcher();
 	_eventDispatche->addCustomEventListener("changeScene", CC_CALLBACK_1(SceneManage::receiveChangeScene, this));
-	
 }
 
 void SceneManage::changeScene(GameProgress* UserData)
