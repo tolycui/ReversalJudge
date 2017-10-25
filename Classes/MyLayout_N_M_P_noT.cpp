@@ -11,7 +11,7 @@ MyLayout_N_M_P_noT::~MyLayout_N_M_P_noT()
 	removeAllChildren();
 }
 
-void MyLayout_N_M_P_noT::setHeadPosition(Vec2 vec)
+void MyLayout_N_M_P_noT::setHeadPosition_my(Vec2 vec)
 {
 	this->personHead->setPosition(vec);
 }

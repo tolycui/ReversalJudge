@@ -162,6 +162,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\MyLayout_N.cpp" />
     <ClCompile Include="..\Classes\MyLayout_N_M.cpp" />
     <ClCompile Include="..\Classes\MyLayout_N_M_P_noT.cpp" />
+    <ClCompile Include="..\Classes\MyLayout_N_M_P_OTHER.cpp" />
+    <ClCompile Include="..\Classes\MyLayout_N_M_P_OWN.cpp" />
     <ClCompile Include="..\Classes\MyMenuItemImage.cpp" />
     <ClCompile Include="..\Classes\MyUtils.cpp" />
     <ClCompile Include="..\Classes\PageADialogMudule.cpp" />
@@ -182,8 +184,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TopBar.cpp" />
     <ClCompile Include="..\Classes\TouchTest.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyLayout_N_M_P_OTHER.cpp" />
-    <ClCompile Include="MyLayout_N_M_P_OWN.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -204,6 +204,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\MyLayout_N.h" />
     <ClInclude Include="..\Classes\MyLayout_N_M.h" />
     <ClInclude Include="..\Classes\MyLayout_N_M_P_noT.h" />
+    <ClInclude Include="..\Classes\MyLayout_N_M_P_OTHER.h" />
+    <ClInclude Include="..\Classes\MyLayout_N_M_P_OWN.h" />
     <ClInclude Include="..\Classes\MyMenuItemImage.h" />
     <ClInclude Include="..\Classes\MyUtils.h" />
     <ClInclude Include="..\Classes\PageADialogMudule.h" />
@@ -227,8 +229,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TopBar.h" />
     <ClInclude Include="..\Classes\TouchTest.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="MyLayout_N_M_P_OTHER.h" />
-    <ClInclude Include="MyLayout_N_M_P_OWN.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

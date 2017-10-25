@@ -123,8 +123,12 @@
     <ClCompile Include="..\Classes\MyLayout_N.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="MyLayout_N_M_P_OWN.cpp" />
-    <ClCompile Include="MyLayout_N_M_P_OTHER.cpp" />
+    <ClCompile Include="..\Classes\MyLayout_N_M_P_OTHER.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MyLayout_N_M_P_OWN.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -250,8 +254,12 @@
     <ClInclude Include="..\Classes\TouchTest.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="MyLayout_N_M_P_OWN.h" />
-    <ClInclude Include="MyLayout_N_M_P_OTHER.h" />
+    <ClInclude Include="..\Classes\MyLayout_N_M_P_OTHER.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MyLayout_N_M_P_OWN.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

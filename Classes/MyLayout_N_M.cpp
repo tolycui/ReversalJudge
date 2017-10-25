@@ -5,7 +5,7 @@ MyLayout_N_M::~MyLayout_N_M()
 	removeAllChildren();
 }
 
-void MyLayout_N_M::setMottoPosition(Vec2 vec)
+void MyLayout_N_M::setMottoPosition_my(Vec2 vec)
 {
 	this->labelMotto->setPosition(vec);
 }
@@ -31,6 +31,8 @@ bool MyLayout_N_M::init(std::string name, std::string motto, float width, float 
 	this->motto = motto;
 	labelMotto = Label::createWithTTF(motto, FNT1, 28.0);
 	labelMotto->setLineBreakWithoutSpace(true);
+	labelMotto->setHorizontalAlignment(TextHAlignment::LEFT);
+	labelMotto->setAnchorPoint(Vec2(0, 1));
 	addChild(labelMotto);
 	return true;
 }

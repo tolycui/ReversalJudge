@@ -11,7 +11,7 @@ public:
 	virtual~MyLayout_N_M();
 	static MyLayout_N_M*create(std::string name, std::string motto, float width, float height);
 	bool init(std::string name, std::string motto, float width, float height);
-	void setMottoPosition(Vec2 vec);
+	void setMottoPosition_my(Vec2 vec);
 
 	void setMottoDimensions(float width, float height);
 	Rect getmottoBoundingBox();

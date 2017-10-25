@@ -35,10 +35,8 @@ bool MyLayout_N::init(std::string name, float width, float height)
 	labelName->setLineBreakWithoutSpace(true);
 	this->setContentSize(Size(width, height));
 	addChild(labelName);
-
-	this->labelName->setPosition(Vec2(10, 10));
-	labelName->setDimensions(200, 100);
-
+	labelName->setAnchorPoint(Vec2(0, 1));
+	labelName->setDimensions(200, 40);
 	return true;
 }
 
