@@ -151,8 +151,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\csvLoadUtils\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\FactoryScene.cpp" />
     <ClCompile Include="..\Classes\GameProgress.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LayerBg.cpp" />
+    <ClCompile Include="..\Classes\LayerChangeName.cpp" />
     <ClCompile Include="..\Classes\LayerMainMenu.cpp" />
     <ClCompile Include="..\Classes\LayerMainPageA.cpp" />
     <ClCompile Include="..\Classes\LayerMainPageB.cpp" />
@@ -193,8 +193,8 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\csvLoadUtils\StringUtil.h" />
     <ClInclude Include="..\Classes\FactoryScene.h" />
     <ClInclude Include="..\Classes\GameProgress.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LayerBg.h" />
+    <ClInclude Include="..\Classes\LayerChangeName.h" />
     <ClInclude Include="..\Classes\LayerMainMenu.h" />
     <ClInclude Include="..\Classes\LayerMainPageA.h" />
     <ClInclude Include="..\Classes\LayerMainPageB.h" />

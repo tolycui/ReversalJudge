@@ -23,7 +23,7 @@ bool PageADialogMudule::init()
 	setContentSize(Size(LISTWID, LISTHEIGHT));
 	setAnchorPoint(Point(0,1));
 	float f = this->getContentSize().width;
-	setPosition(Point(FRAMESIZE.width - this->getContentSize().width, FRAMESIZE.height - PERSON_MODULE_BOTTOM));
+	this->setPosition(Point(FRAMESIZE.width - this->getContentSize().width, FRAMESIZE.height - PERSON_MODULE_BOTTOM));
 	//setScrollBarEnabled(false);//设置滚动条不显示;
 	setScrollBarPositionFromCorner(Vec2(2, 0));  //设置滚动条距离ViewList最右上角(竖排列) 或最左下角(横排列)的距离;
 	setScrollBarWidth(FRAMESIZE.width / 100);  //设置滚动条宽度
@@ -33,7 +33,7 @@ bool PageADialogMudule::init()
 		_array.push_back(ccstr);
 	}
 
-	for (int i = 0; i < 15; ++i)
+	for (int i = 1; i <= 15; ++i)
 	{
 	//	/*auto image = ImageView::create("MainSceneBg.jpg");
 	//	image->setScale(size.height / image->getContentSize().height);
@@ -67,6 +67,7 @@ bool PageADialogMudule::init()
 		layout->setNamePosition_my(Vec2(layout->getContentSize().width / 3, layout->getContentSize().height * 2 / 3));
 		layout->setMottoPosition_my(Vec2(layout->getContentSize().width / 3, layout->getContentSize().height / 3));
 		addChild(layout);
+		layout->setTag(i);
 	}
 
 	setItemsMargin(FRAMESIZE.height/80);  //间隔;

@@ -33,9 +33,6 @@
     <ClCompile Include="..\Classes\GameProgress.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\LayerBg.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -129,6 +126,9 @@
     <ClCompile Include="..\Classes\MyLayout_N_M_P_OWN.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LayerChangeName.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -153,9 +153,6 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameProgress.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LayerBg.h">
@@ -258,6 +255,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\MyLayout_N_M_P_OWN.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LayerChangeName.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

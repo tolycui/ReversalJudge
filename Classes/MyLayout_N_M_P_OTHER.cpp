@@ -1,7 +1,6 @@
 #include "MyLayout_N_M_P_OTHER.h"
 
 
-
 MyLayout_N_M_P_OTHER::~MyLayout_N_M_P_OTHER()
 {
 	removeAllChildren();
@@ -29,11 +28,12 @@ bool MyLayout_N_M_P_OTHER::init(std::string name, std::string motto, std::string
 		return false;
 	}
 	//绑定一些触摸函数;
-	this->_eventDispatcher->addCustomEventListener("changeNameOther", CC_CALLBACK_1(MyLayout_N_M_P_OTHER::changeName_Other,this));
+
 	button = Button::create("botton.png", "botton_HL.png");
 	button->setScale9Enabled(true);
 	button->setScaleY(height / button->getContentSize().height);
 	button->setScaleX(width / button->getContentSize().width);
+	
 	//bt->setContentSize(Size(size.width / 2, size.height / 2));
 	button->setPosition(Point(width / 2, height / 2));
 	addChild(button);
@@ -59,6 +59,7 @@ void MyLayout_N_M_P_OTHER::changeName_Other(Ref* pData)
 		_eventDispatcher->addEventListenerWithFixedPriority(test, -128);
 		this->setSwallowTouches(true);
 	}
+	log("%d", this);
 }
 
 //bool MyLayout_N_M_P_OTHER::onTouchBegan(Touch *touch, Event *unusedEvent)
@@ -83,20 +84,19 @@ void MyLayout_N_M_P_OTHER::changeName_Other(Ref* pData)
 //}
 
 //进入对话界面;要去网上找现成的代码;
-void MyLayout_N_M_P_OTHER::EnterDialog()
+void MyLayout_N_M_P_OTHER::EnterDialog(MyLayout_N_M_P_OTHER * pSender)
 {
 	log("enterDialog");
 	
 	
 }
 
-void MyLayout_N_M_P_OTHER::showLayoutChangeName(float dt)
+void MyLayout_N_M_P_OTHER::sendChangeNameother(float dt)
 {
-	log("showLayoutChangeName");
+	isDo = true;
 	EventCustom ev = EventCustom("changeNameOther");
 	ev.setUserData(this);
 	this->_eventDispatcher->dispatchEvent(&ev);  //每一个订阅者都收到消息;  不想让每一个订阅者都收到;
-	
 }
 
 void MyLayout_N_M_P_OTHER::MyClicked(Ref *pSender, Widget::TouchEventType type)
@@ -105,22 +105,28 @@ void MyLayout_N_M_P_OTHER::MyClicked(Ref *pSender, Widget::TouchEventType type)
 	{
 	case cocos2d::ui::Widget::TouchEventType::BEGAN:
 	{
-
-		scheduleOnce(schedule_selector(MyLayout_N_M_P_OTHER::showLayoutChangeName), 0.5f);
-		log("begin");
+		scheduleOnce(schedule_selector(MyLayout_N_M_P_OTHER::sendChangeNameother), 0.5f);
 		break;
 	}
 	case cocos2d::ui::Widget::TouchEventType::MOVED:
 	{
-		unschedule(schedule_selector(MyLayout_N_M_P_OTHER::showLayoutChangeName));
-		log("moved");
+		unschedule(schedule_selector(MyLayout_N_M_P_OTHER::sendChangeNameother));
+		isMove = true;
 		break;
 	}
 	case cocos2d::ui::Widget::TouchEventType::CANCELED:
 	case cocos2d::ui::Widget::TouchEventType::ENDED:
 	{
-
-		log("ended");
+		unschedule(schedule_selector(MyLayout_N_M_P_OTHER::sendChangeNameother));
+		if (isDo || isMove)
+		{
+			isDo = false;
+			isMove = false;
+			break;
+		}
+		EnterDialog(this);
+		isMove = false;
+		isDo = false;
 		break;
 	}
 	}

@@ -16,7 +16,8 @@ static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 
 //字体
 #define FNT1 "fnt/JDJHCU.TTF"
-
+#define CHINESE_FNT "fnt/Myfnt.fnt"
+#define CHINESE_XML "chinesexml/BottomBarItem.xml"
 
 //主界面底部按钮的大小
 #define WID  (FRAMESIZE.width / 12)
@@ -29,10 +30,10 @@ static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 //聊天列表的宽度和高度;
 #define LISTWID FRAMESIZE.width * 23 / 24
 #define LISTHEIGHT (FRAMESIZE.height - PERSON_MODULE_BOTTOM - BARHIGHT)
+//聊天列表一个Item的高度
+#define LISTITEM_HEIGHT (FRAMESIZE.height / 10)
 
 
-#define CHINESE_FNT "fnt/Myfnt.fnt"
-#define CHINESE_XML "chinesexml/BottomBarItem.xml"
 
 //人物聊天头像大小
 #define PERSONHEADHEIGHT_OWN (FRAMESIZE.width/5)
