@@ -43,23 +43,23 @@ bool LayerChangeName::init(MyLayout_N_M_P_OTHER * data)
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touch,this);   //  设置触摸优先级;
 
 	Vec2 vec2 =data->getWorldPosition();
-	btn = Button::create("btnWhite.jpg","btnWhite_Press.jpg");
+	btnChange = Button::create("btnWhite.jpg","btnWhite_Press.jpg");
 	//btn->setContentSize(Size(100, 100));
-	btn->setColor(Color3B::WHITE);
-	btn->setPosition(Vec2(FRAMESIZE.width / 2, vec2.y));
+	btnChange->setColor(Color3B::WHITE);
+	btnChange->setPosition(Vec2(FRAMESIZE.width / 2, vec2.y));
 	Label* lb = Label::createWithBMFont(CHINESE_FNT, "修改备注", TextHAlignment::CENTER);
 	lb->setColor(Color3B::BLACK);
-	btn->addChild(lb);
-	lb->setPosition(Vec2(btn->getContentSize().width / 2, btn->getContentSize().height / 2));
-	addChild(btn);
-	btn->setSwallowTouches(true);
-	btn->addTouchEventListener(CC_CALLBACK_2(LayerChangeName::changeNameOutput, this));
+	btnChange->addChild(lb);
+	lb->setPosition(Vec2(btnChange->getContentSize().width / 2, btnChange->getContentSize().height / 2));
+	addChild(btnChange);
+	btnChange->setSwallowTouches(true);
+	btnChange->addTouchEventListener(CC_CALLBACK_2(LayerChangeName::changeNameBtnCallback, this));
 
 
 	return true;
 }
 
-void LayerChangeName::changeNameOutput(Ref* pSender, Widget::TouchEventType type )
+void LayerChangeName::changeNameBtnCallback(Ref* pSender, Widget::TouchEventType type )
 {
 	switch (type)
 	{
@@ -69,33 +69,36 @@ void LayerChangeName::changeNameOutput(Ref* pSender, Widget::TouchEventType type
 	}
 	case cocos2d::ui::Widget::TouchEventType::MOVED:
 	{
-													   isMoved = true;
+													   isBtnChangeMoved = true;
 													   break;
 	}
 	case cocos2d::ui::Widget::TouchEventType::ENDED:
 	case cocos2d::ui::Widget::TouchEventType::CANCELED:
 	{
-														  if (!isMoved)
+														  if (!isBtnChangeMoved)
 														  {
 															  log("changeName call");
 															  EditBox *editBox = EditBox::create(Size(200, 40), "EditBg.jpg");
 															  editBox->setFont("Arial", 32);
 															  editBox->setFontColor(Color4B::BLACK);
-															  
+															  layerEdit = Layer::create();
+															 
+															/*  layerSwallow->setSwallowsTouches(true);
+															  EventListenerTouchOneByOne*listener2 = EventListenerTouchOneByOne::create();*/
+
 															  editBox->setPlaceHolder("please outPut");   //提示文本.默认灰色
 															  editBox->setPlaceholderFont("Arial",32);
-															  editBox->setPosition(Vec2(btn->getWorldPosition().x, btn->getWorldPosition().y + FRAMESIZE.height / 20));
-															//  editBox->touchDownAction(editBox, Widget::TouchEventType::ENDED);   // 设置主动弹出输入框
+															  editBox->setPosition(Vec2(btnChange->getWorldPosition().x, btnChange->getWorldPosition().y + FRAMESIZE.height / 20));
 															  editBox->setInputMode(EditBox::InputMode::SINGLE_LINE);
 															  editBox->setReturnType(EditBox::KeyboardReturnType::DONE);
 															  editBox->setDelegate(this);
 															  addChild(editBox);
 
-															  btn->setEnabled(false);
-															  btn->setVisible(false);
-															  isMoved = false;
+															  btnChange->setEnabled(false);
+															  btnChange->setVisible(false);
+															  isBtnChangeMoved = false;
 														  }
-														  isMoved = false;
+														  isBtnChangeMoved = false;
 														break;
 	}
 	}
@@ -109,19 +112,19 @@ bool LayerChangeName::onTouchBegan(Touch *touch, Event *unused_event)
 
 void LayerChangeName::onTouchMoved(Touch *touch, Event *unused_event)
 {
-	isCancelMoved = true;
+	isLayerCancel = true;
 }
 
 void LayerChangeName::onTouchEnded(Touch *touch, Event *unused_event)
 {
-	if (!isCancelMoved)
+	if (!isLayerCancel)
 	{
 		EventCustom ev = EventCustom("TouchRecover");
 		_eventDispatcher->dispatchEvent(&ev);
 	}
 	else
 	{
-		isCancelMoved = false;
+		isLayerCancel = false;
 	}
 }
 

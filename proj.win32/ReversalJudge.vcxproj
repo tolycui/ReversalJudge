@@ -183,6 +183,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\TopBar.cpp" />
     <ClCompile Include="..\Classes\TouchTest.cpp" />
+    <ClCompile Include="LayerSwallowTouch.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +229,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TitleScene.h" />
     <ClInclude Include="..\Classes\TopBar.h" />
     <ClInclude Include="..\Classes\TouchTest.h" />
+    <ClInclude Include="LayerSwallowTouch.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
