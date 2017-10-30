@@ -158,6 +158,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\LayerMainPageB.cpp" />
     <ClCompile Include="..\Classes\LayerMainPageC.cpp" />
     <ClCompile Include="..\Classes\LayerMainPageD.cpp" />
+    <ClCompile Include="..\Classes\LayerSwallowTouch.cpp" />
     <ClCompile Include="..\Classes\LayerTopbarBasics.cpp" />
     <ClCompile Include="..\Classes\MyLayout_N.cpp" />
     <ClCompile Include="..\Classes\MyLayout_N_M.cpp" />
@@ -183,7 +184,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\TopBar.cpp" />
     <ClCompile Include="..\Classes\TouchTest.cpp" />
-    <ClCompile Include="LayerSwallowTouch.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +201,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\LayerMainPageB.h" />
     <ClInclude Include="..\Classes\LayerMainPageC.h" />
     <ClInclude Include="..\Classes\LayerMainPageD.h" />
+    <ClInclude Include="..\Classes\LayerSwallowTouch.h" />
     <ClInclude Include="..\Classes\LayerTopbarBasics.h" />
     <ClInclude Include="..\Classes\MyLayout_N.h" />
     <ClInclude Include="..\Classes\MyLayout_N_M.h" />
@@ -229,7 +230,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\TitleScene.h" />
     <ClInclude Include="..\Classes\TopBar.h" />
     <ClInclude Include="..\Classes\TouchTest.h" />
-    <ClInclude Include="LayerSwallowTouch.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,6 @@ class LayerMainPageA :
 	public Layer
 {
 public:
-	LayerMainPageA();
 	virtual ~LayerMainPageA();
 	CREATE_FUNC(LayerMainPageA);
 	bool init();

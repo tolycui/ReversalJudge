@@ -129,7 +129,9 @@
     <ClCompile Include="..\Classes\LayerChangeName.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="LayerSwallowTouch.cpp" />
+    <ClCompile Include="..\Classes\LayerSwallowTouch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -261,7 +263,9 @@
     <ClInclude Include="..\Classes\LayerChangeName.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="LayerSwallowTouch.h" />
+    <ClInclude Include="..\Classes\LayerSwallowTouch.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

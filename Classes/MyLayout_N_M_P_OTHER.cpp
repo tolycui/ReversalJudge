@@ -4,7 +4,6 @@
 MyLayout_N_M_P_OTHER::~MyLayout_N_M_P_OTHER()
 {
 	removeAllChildren();
-	this->_eventDispatcher->removeCustomEventListeners("changeNameOther");
 }
 
 MyLayout_N_M_P_OTHER* MyLayout_N_M_P_OTHER::create(std::string name, std::string motto, std::string headFile, 

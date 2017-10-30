@@ -18,6 +18,8 @@ public:
 
 protected:
 	CC_SYNTHESIZE(std::string, motto, _Motto);
-	CC_SYNTHESIZE_READONLY(Label*, labelMotto, _LabelMotto);
+	Label*labelMotto;
+	Label* get_LabelMotto(){ return this->labelMotto; }
+
 };
 

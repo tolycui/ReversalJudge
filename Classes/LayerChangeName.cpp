@@ -7,8 +7,9 @@ LayerChangeName::LayerChangeName()
 
 LayerChangeName::~LayerChangeName()
 {
-	CC_SAFE_RELEASE(this->data);
-	removeAllChildren();
+	//_eventDispatcher->removeEventListener(this->touch);
+	//CC_SAFE_RELEASE(this->data);
+	//removeAllChildren();
 }
 
 LayerChangeName* LayerChangeName::create(MyLayout_N_M_P_OTHER * data)
@@ -33,11 +34,11 @@ bool LayerChangeName::init(MyLayout_N_M_P_OTHER * data)
 	this->addChild(lyChangeName);
 	this->data = data;
 	this->data->retain();
-	EventListenerTouchOneByOne* touch = EventListenerTouchOneByOne::create();
+	touch = EventListenerTouchOneByOne::create();
 	touch->onTouchBegan = CC_CALLBACK_2(LayerChangeName::onTouchBegan,this);
 	touch->onTouchMoved = CC_CALLBACK_2(LayerChangeName::onTouchMoved, this);
 	touch->onTouchEnded = CC_CALLBACK_2(LayerChangeName::onTouchEnded, this);
-
+	
 	//this->setSwallowsTouches(true);   // 这个语句无法吞噬触摸事件!  触摸事件的吞噬要用Listener
 	touch->setSwallowTouches(true);   // 这个语句才是设置触摸吞噬;
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touch,this);   //  设置触摸优先级;
@@ -54,8 +55,7 @@ bool LayerChangeName::init(MyLayout_N_M_P_OTHER * data)
 	addChild(btnChange);
 	btnChange->setSwallowTouches(true);
 	btnChange->addTouchEventListener(CC_CALLBACK_2(LayerChangeName::changeNameBtnCallback, this));
-
-
+	_eventDispatcher->addCustomEventListener("changeNameRemove", CC_CALLBACK_1(LayerChangeName::receiveRemove,this));
 	return true;
 }
 
@@ -73,34 +73,23 @@ void LayerChangeName::changeNameBtnCallback(Ref* pSender, Widget::TouchEventType
 													   break;
 	}
 	case cocos2d::ui::Widget::TouchEventType::ENDED:
-	case cocos2d::ui::Widget::TouchEventType::CANCELED:
 	{
 														  if (!isBtnChangeMoved)
 														  {
 															  log("changeName call");
-															  EditBox *editBox = EditBox::create(Size(200, 40), "EditBg.jpg");
-															  editBox->setFont("Arial", 32);
-															  editBox->setFontColor(Color4B::BLACK);
-															  layerEdit = Layer::create();
-															 
-															/*  layerSwallow->setSwallowsTouches(true);
-															  EventListenerTouchOneByOne*listener2 = EventListenerTouchOneByOne::create();*/
-
-															  editBox->setPlaceHolder("please outPut");   //提示文本.默认灰色
-															  editBox->setPlaceholderFont("Arial",32);
-															  editBox->setPosition(Vec2(btnChange->getWorldPosition().x, btnChange->getWorldPosition().y + FRAMESIZE.height / 20));
-															  editBox->setInputMode(EditBox::InputMode::SINGLE_LINE);
-															  editBox->setReturnType(EditBox::KeyboardReturnType::DONE);
-															  editBox->setDelegate(this);
-															  addChild(editBox);
-
+															  Label* layer = data->get_LabelName();
+															  layswallowTouch = LayerSwallowTouch::create(layer);
+															  addChild(layswallowTouch);
 															  btnChange->setEnabled(false);
 															  btnChange->setVisible(false);
-															  isBtnChangeMoved = false;
 														  }
 														  isBtnChangeMoved = false;
 														break;
 	}
+
+	case cocos2d::ui::Widget::TouchEventType::CANCELED:
+		isBtnChangeMoved = false;
+		break;
 	}
 }
 
@@ -146,6 +135,12 @@ void LayerChangeName::editBoxTextChanged(EditBox* editBox, const std::string& te
 {
 	log("TextChanged");
 	//可以用来检测输入长度;
+}
+
+void LayerChangeName::receiveRemove(EventCustom* event)
+{
+	EventCustom ev = EventCustom("TouchRecover");
+	_eventDispatcher->dispatchEvent(&ev);
 }
 
 

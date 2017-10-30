@@ -29,6 +29,9 @@ public:
 protected:
 	CC_SYNTHESIZE(std::string, name, _Name);
 
-	CC_SYNTHESIZE_READONLY(Label*, labelName, _LabelName);
+	Label* labelName;
+	Label* get_LabelName(){
+		return this->labelName;
+	};
 };
 
