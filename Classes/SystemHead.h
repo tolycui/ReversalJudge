@@ -18,6 +18,7 @@ static cocos2d::Size largeResolutionSize = cocos2d::Size(1080, 1920);
 #define FNT1 "fnt/JDJHCU.TTF"
 #define CHINESE_FNT "fnt/Myfnt.fnt"
 #define CHINESE_XML "chinesexml/BottomBarItem.xml"
+#define CHINESE_XML2 "chinesexml/chinese.xml"
 
 //主界面底部按钮的大小
 #define WID  (FRAMESIZE.width / 12)

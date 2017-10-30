@@ -7,9 +7,11 @@ LayerChangeName::LayerChangeName()
 
 LayerChangeName::~LayerChangeName()
 {
-	//_eventDispatcher->removeEventListener(this->touch);
-	//CC_SAFE_RELEASE(this->data);
-	//removeAllChildren();
+	_eventDispatcher->removeEventListener(this->touch);
+	_eventDispatcher->removeCustomEventListeners("changeNameRemove");
+	CC_SAFE_RELEASE(this->data);
+	removeAllChildren();
+	unscheduleUpdate();
 }
 
 LayerChangeName* LayerChangeName::create(MyLayout_N_M_P_OTHER * data)
@@ -139,8 +141,17 @@ void LayerChangeName::editBoxTextChanged(EditBox* editBox, const std::string& te
 
 void LayerChangeName::receiveRemove(EventCustom* event)
 {
-	EventCustom ev = EventCustom("TouchRecover");
-	_eventDispatcher->dispatchEvent(&ev);
+	willRemove = true;
+	scheduleUpdate();
+}
+
+void LayerChangeName::update(float delta)
+{
+	if (willRemove)
+	{
+		EventCustom ev = EventCustom("TouchRecover");
+		_eventDispatcher->dispatchEvent(&ev);
+	}
 }
 
 

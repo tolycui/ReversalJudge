@@ -48,5 +48,9 @@ protected:
 //	bool isBtnCancelMoved;  //文本编辑取消按钮按下移动
 
 
+
+	//以下是测试内容
+	void update(float delta);
+	bool willRemove = false;
 };
 

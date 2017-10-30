@@ -8,4 +8,8 @@
   
   <key>chengxu</key>
   <string>程序:</string>
+  
+  <key>inputEmptyWarning</key>
+  <string>输入不能为空</string>
+  
  </dict>

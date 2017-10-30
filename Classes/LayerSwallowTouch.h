@@ -34,5 +34,6 @@ public:
 	virtual void btnConfirmCallback(Ref* pSender, Widget::TouchEventType type);
 	virtual void btnCancelCallback(Ref* pSender, Widget::TouchEventType type);
 	virtual void sendMessage();
+	bool autoChangeText=false;
 };
 

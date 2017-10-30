@@ -1,20 +1,17 @@
 #include "LayerSwallowTouch.h"
 
-
 LayerSwallowTouch::~LayerSwallowTouch()
 {
-	//removeAllChildren();
-	////CC_SAFE_RELEASE(label);
-	//_eventDispatcher->removeEventListener(this->touch);
+	removeAllChildren();
+	CC_SAFE_RELEASE(label);
+	_eventDispatcher->removeEventListener(this->touch);
 	sendMessage();
-
 }
 
 void LayerSwallowTouch::DelegateEdixBox()
 {
 	editBox->setDelegate(this);
 }
-
 
 void LayerSwallowTouch::editBoxEditingDidBegin(EditBox* editBox)
 {
@@ -30,12 +27,21 @@ void LayerSwallowTouch::editBoxEditingDidBegin(EditBox* editBox)
 
 void LayerSwallowTouch::editBoxTextChanged(EditBox* editBox, const std::string& text)
 {
-	if (text.size() > 30)
+	if (text.size() > 15)
 	{
-		MessageBox("name length not longer 15 chars", "warning");
+		if (autoChangeText)  // 2.为了应对自动进入一次的问题而增加的bool型变量;
+		{
+			autoChangeText = false;
+			return;
+		}
+		else
+		{
+			MessageBox("name length not longer 15 chars", "warning");
+		}
 		if (!textTemp.empty())
 		{
 			editBox->setText(textTemp.c_str());
+			autoChangeText = true;   //1.调用editBox设置字符串时,还会再自动进入一次这个函数,因为这里面text改变了一次;
 		}
 		else
 		{
@@ -45,7 +51,10 @@ void LayerSwallowTouch::editBoxTextChanged(EditBox* editBox, const std::string& 
 	else
 	{
 		textTemp = text;
-		log("记录textTemp");
+		if (text.empty())
+		{
+			editBox->setPlaceHolder("");
+		}
 	}
 }
 
@@ -143,18 +152,24 @@ void LayerSwallowTouch::btnConfirmCallback(Ref* pSender, Widget::TouchEventType 
 	}	
 	case cocos2d::ui::Widget::TouchEventType::ENDED:
 	{
-													   if (!btnConfirmMoved)
+													   int b = std::strlen(editBox->getText());
+													   if (!btnConfirmMoved && b!= 0)
 													   {
+														   //修改姓名完成!
 														   label->setString(this->editBox->getText());
-													       log("Confirm change");  
 														   removeFromParent();
 														   break;
 													   }
-													   else
+													   if (0==b)
 													   {
-														   btnConfirmMoved = false;
-														   break;
+														   //__Dictionary* dic = __Dictionary::createWithContentsOfFile(CHINESE_XML2);
+														   //const __String *mes = dic->valueForKey("cehua");
+														   //inputEmptyWarning
+														   //MessageBox((mes->getCString()), "warning");
+														   MessageBox("The input can not be empty!", "warning");
 													   }
+														btnConfirmMoved = false;
+														break;
 	}
 	case cocos2d::ui::Widget::TouchEventType::CANCELED:
 	{
@@ -179,10 +194,12 @@ void LayerSwallowTouch::btnCancelCallback(Ref* pSender, Widget::TouchEventType t
 	{
 													   if (!btnCancenMoved)
 													   {
-														   log("cancel");
 														   removeFromParent();
 													   }
-													   btnCancenMoved = false;
+													   else
+													   {
+														   btnCancenMoved = false;
+													   }
 													   break;
 	}
 	case cocos2d::ui::Widget::TouchEventType::CANCELED:
@@ -195,9 +212,7 @@ void LayerSwallowTouch::btnCancelCallback(Ref* pSender, Widget::TouchEventType t
 
 void LayerSwallowTouch::sendMessage()
 {
-	//EventCustom ev = EventCustom("changeNameRemove");
-	
-	EventCustom ev = EventCustom("TouchRecover");
+	EventCustom ev = EventCustom("changeNameRemove");
 	_eventDispatcher->dispatchEvent(&ev);
 
 }
